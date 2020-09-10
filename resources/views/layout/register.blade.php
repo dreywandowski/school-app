@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap" rel="stylesheet">
-        <link href="/css/index.css" rel="stylesheet">
+        <link href="/css/register.css" rel="stylesheet">
     </head>
 
     <body>

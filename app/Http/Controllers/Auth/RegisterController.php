@@ -29,7 +29,21 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::REG;
+
+
+
+
+/**public function redirectTo()
+    {
+        if (auth()->user()->is_authenticated) {
+            return 'school/dashboard';
+        } 
+        else {
+            return '/home';
+        }
+    }**/
+
 
     /**
      * Create a new controller instance.

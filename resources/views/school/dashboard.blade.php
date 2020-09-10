@@ -1,3 +1,5 @@
+<p> Welcome to your dashboard!!</p>
+
 @extends('layouts.app')
 
 @section('content')
@@ -21,5 +23,3 @@
     </div>
 </div>
 @endsection
-
-
