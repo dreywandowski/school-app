@@ -26,7 +26,14 @@ Route::get('/school', 'SchoolController@index');
 
 
 
+// route for the dashboard
+Route::get('/school/dashboard', 'SchoolController@dashboard');
+
+
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
