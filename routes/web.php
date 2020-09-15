@@ -26,8 +26,17 @@ Route::get('/school', 'SchoolController@index');
 
 
 
-// route for the dashboard
+// route for the default dashboard
 Route::get('/school/dashboard', 'SchoolController@dashboard');
+
+
+// route for the student dashboard
+Route::get('/school/student', 'SchoolController@student');
+
+
+
+// route for the teacher dashboard
+Route::get('/school/teacher', 'SchoolController@teacher');
 
 
 

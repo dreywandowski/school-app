@@ -15,11 +15,30 @@ class SchoolController extends Controller
     return view('school.index');
 }
 
- // function to handle the view
+
+
+
+ // function to handle the default dashboard view
   public function dashboard(){
 
-// retrive the home page
     return view('school.dashboard');
 }
 
+
+
+
+ // function to handle the student dashboard view
+  public function student(){
+
+// retrive the home page
+    return view('school.student');
+}
+
+
+ // function to handle the teacher dashboard view
+  public function teacher(){
+
+// retrive the home page
+    return view('school.teacher');
+}
 }
