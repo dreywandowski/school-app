@@ -27,16 +27,17 @@ Route::get('/school', 'SchoolController@index');
 
 
 // route for the default dashboard
-Route::get('/school/dashboard', 'SchoolController@dashboard');
+Route::get('/school/dashboard', 'SchoolController@dashboard')->middleware('auth');
 
 
 // route for the student dashboard
-Route::get('/school/student', 'SchoolController@student');
+Route::get('/school/student', 'SchoolController@student')->middleware('auth');
+;
 
 
 
 // route for the teacher dashboard
-Route::get('/school/teacher', 'SchoolController@teacher');
+Route::get('/school/teacher', 'SchoolController@teacher')->middleware('auth');
 
 
 

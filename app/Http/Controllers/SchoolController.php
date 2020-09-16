@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 
 class SchoolController extends Controller
 {
+
+
+/** users must be logged in before accessing any route under this controller
+public function __construct()
+    {
+        $this->middleware('auth');
+    }
+**/
+
     // function to handle the view
   public function index(){
 
