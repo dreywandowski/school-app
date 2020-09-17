@@ -15,5 +15,8 @@
 
 
             @yield('content')
+
+
+            <a href="/index"> Go Home</a>
         </body>
         </html>

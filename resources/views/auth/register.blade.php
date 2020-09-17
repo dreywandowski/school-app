@@ -90,4 +90,7 @@
         </div>
     </div>
 </div>
+
+<br><br>
+    <a href="/school/"> Go Home</a>
 @endsection
