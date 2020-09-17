@@ -1,85 +1,5 @@
- /**html, body {
-                background-color: #aaaaff;
-                color: white;
-             font-family: 'Kumbh Sans', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-           .first-content{
-            float: left;
-         margin: 0 auto;
-         margin-left: 15%;
-         margin-top: 18%;
-         line-height: 1.5;
-            width: 30%;
-            height: 20%;
-           }
-
-
-           .second-content{
-              float: right;
-         margin: 0 auto;
-         margin-right: 15%;
-         margin-top: 18%;
-        
-            width: 30%;
-            height: 20%;
-           }
-
-#img{
-     width: 100%;
-  height: auto;
-}
-           
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-           
-
-Nav Bar start here 
-Add a black background color to the top navigation 
-.topnav {
-   margin-left: 8%;
- margin-top: 12%;
-  overflow: hidden;
-}
-
-Style the links inside the navigation bar 
-.topnav a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-Change the color of links on hover 
-.topnav a:hover {
-
-  color: black;
-}
-
-Add a color to the active/current link 
-.topnav a.active {
-  background-color:  #aaaaff;
-  color: white;
-}
-
-
-**/
-
-html, body {
-    background: url(/img/2547984.jpg);
+body {
+    background-image: url(img/stud.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -87,10 +7,10 @@ html, body {
 div.container {
     width: 85%;
     margin: 5% auto 2% auto;
-    font-family: 'Kumbh Sans', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 0 0 0 0;
     border: 1px solid whitesmoke;
-    background: ghostwhite;
+    background: white;
     border-radius: 0 40px 0 40px;
 }
 
