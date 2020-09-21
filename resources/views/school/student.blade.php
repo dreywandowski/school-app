@@ -76,10 +76,10 @@ else {
     <div id="nav_wrapper">
     <ul>
         <li><button id="prompt">Update your profile</button></li><br>
-        <li><a href="courses/course_dl.php"> Download Courses</a></li><br>
-        <li><a href="pay_fees.php"> Pay School Fees</a></li><br>
+        <li><a href="/school/courses"> Download Courses</a></li><br>
+        <li><a href="/school/fees"> Pay School Fees</a></li><br>
         <li><a href="view_bills.php"> Payment History</a></li><br>
-        <li><a href="../Exam/jamb.php" target="_blank"> Exam Portal</a></li><br>
+        <li><a href="/school/exams" target="_blank"> Exam Portal</a></li><br>
         <li><a href="exams.php">Examination Results</a></li><br>
         <li><a href="../forgot_pwd.php"> Reset Password </a></li><br>
 </ul>

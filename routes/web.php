@@ -35,9 +35,25 @@ Route::get('/school/student', 'SchoolController@student')->middleware('auth');
 ;
 
 
-
 // route for the teacher dashboard
 Route::get('/school/teacher', 'SchoolController@teacher')->middleware('auth');
+
+
+
+
+// routes for Exams dashboard
+Route::get('/school/exams', 'ExamsController@index')->middleware('auth');
+
+
+
+// routes for Fees dashboard
+Route::get('/school/fees', 'FeesController@index')->middleware('auth');
+
+
+
+// routes for Courses dashboard
+Route::get('/school/courses', 'CourseController@index')->middleware('auth');
+
 
 
 
