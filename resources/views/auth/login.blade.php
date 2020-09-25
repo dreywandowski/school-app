@@ -69,7 +69,7 @@
 
 
                 </form>
-                <p class="form-footer">Don't have an account? <a href="register.html">Register here.</a></p>
+                <p class="form-footer">Don't have an account? <a href="register">Register here.</a></p>
             </div>
         
         </div>
@@ -79,6 +79,9 @@
         </footer>
     </div>
     </div>
+
+    <br><br>
+    <a href="/school/"> Go Home</a>
 </body>
 </html>
 
