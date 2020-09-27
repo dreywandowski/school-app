@@ -16,4 +16,12 @@ class ExamsController extends Controller
 }
 
 
+ public function upload(){
+
+// retrive the home page
+    return view('school.exams.upload');
+}
+
+
+
 }

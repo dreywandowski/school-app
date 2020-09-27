@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/login.css">
+@extends('layout.application')
+
+@section('content')
     <title>REGISTER</title>
 </head>
 <body>
@@ -12,14 +8,14 @@
         <div class="container-ii">
         <header>
             <div class="logo">
-                <a href="/school"><h2>DREY COLLEGE</h2></a>
+                <a href="/school"><h2></h2></a>
                 <a href="/school"><img src="/img/drey42.jpg" alt=""></a>
             </div>
 
             <div class="today"><p>DD/MMM/YYYY<p></div>
 
             <div class="header-text">
-                <h1>School Portal</h1>
+                <h1>Online Portal</h1>
             </div>
             <div class="other-object">
                 <p>Other stuff goes in here...</p>
@@ -43,14 +39,14 @@
                     </div>
 
                    
-                    <!--<div class="input-form">
+                    <div class="input-form">
                         <select name="gender" id="gender">
                             <option value="none">Select Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                            <option value="Other">Other</option>
+                            <option value="Other">Prefer not to say</option>
                         </select>
-                    </div>-->
+                    </div>
 
 
                     <div class="input-form">
@@ -73,9 +69,14 @@
                     </div>
 
 
-                    <!--<div class="input-form">
-                        <input type="text" class="user" placeholder="Preferred Username" required>
-                    </div>-->
+                    <div class="input-form">
+                        <input type="text" class="user" name="username" placeholder="Preferred Username" required>
+                        @error('username')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror                
+                    </div>
 
                     <div class="input-form">
                         <input type="password" class="login-pwd form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Enter Password" required>      @error('password')
@@ -100,16 +101,8 @@
             </div>
         
         </div>
-            
-        <footer class="footer">
-            <p>Copyright &COPY; Dreywandowski College, 2020.</p>
-        </footer>
-    </div>
-    </div>
-    <br><br>
-    <a href="/school/"> Go Home</a>
-</body>
-</html>
+           @endsection
+
 
 
 

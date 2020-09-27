@@ -1,6 +1,6 @@
 
 
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -78,7 +78,7 @@ else {
     <ul>
         <li><button id="prompt">Update your profile</button></li><br>
         <li><a href="courses/courses.php"> Upload Lecture Notes </a></li><br>
-        <li><a href="papers.php"> Upload Exam Questions </a></li><br>
+        <li><a href="/school/exams/upload"> Upload Exam Questions </a></li><br>
         <li><a href="../forgot_pwd.php"> Reset Password </a></li><br>
 </ul>
     </ol>

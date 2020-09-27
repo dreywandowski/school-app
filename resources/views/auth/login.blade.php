@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/login.css">
+@extends('layout.application')
+
+@section('content')
     <title>LOGIN</title>
 </head>
 <body>
@@ -20,7 +16,7 @@
             <div class="today"><p>DD/MMM/YYYY<p></div>
 
             <div class="header-text">
-                <h1>School Portal</h1>
+                <h1>Online Portal</h1>
             </div>
             <div class="other-object">
                 <p>Other stuff goes in here...</p>
@@ -34,6 +30,17 @@
                       @csrf
 
                     <div class="input-form">
+                        <i class="fa fa-user icon"></i><input type="text" id="username"  name="username" required autocomplete="username" autofocus class="e-mail" placeholder="Enter Username">
+                         @error('username')
+                                    <span  role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                    </div>
+
+                    <!--
+                    <div class="input-form">
                         <i class="fa fa-user icon"></i><input type="email" id="email" value="{{ old('email') }}" name="email" required autocomplete="email" autofocus class="e-mail" placeholder="Enter Email Address">
                          @error('email')
                                     <span  role="alert">
@@ -41,7 +48,8 @@
                                     </span>
                                 @enderror
 
-                    </div>
+                    </div>-->
+
                     <div class="input-form">
                         <i class="fa fa-key icon"></i><input type="password" id="password" class="login-pwd" placeholder="Enter Password"  name="password" required autocomplete="current-password">   
 
@@ -61,29 +69,23 @@
                     {{ __('Login') }}
                 </button>
 
+                 <br><br>
                  @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                         <i> Forgot Your Password?</i>
                                     </a>
                                 @endif
+                            
 
 
                 </form>
-                <p class="form-footer">Don't have an account? <a href="register">Register here.</a></p>
+                <br><br>
+                <h3><p class="form-footer">Don't have an account? <a href="register">Register here</a></p></h3>
             </div>
         
         </div>
             
-        <footer class="footer">
-            <p>Copyright &COPY; ADURAMIMO, 2020.</p>
-        </footer>
-    </div>
-    </div>
-
-    <br><br>
-    <a href="/school/"> Go Home</a>
-</body>
-</html>
+      @endsection
 
 
 

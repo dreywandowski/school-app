@@ -72,6 +72,8 @@ public function redirectTo(){
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['required', 'string', 'min:3'],
+            'username' => ['required', 'string', 'min:5', 'unique:users'],
+            'gender' => ['required', 'string', 'min:3'],
         ]);
     }
 
@@ -88,6 +90,8 @@ public function redirectTo(){
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role' => $data['role'],
+            'username' => $data['username'],
+            'gender' => $data['gender'],
         ]);
     }
 }

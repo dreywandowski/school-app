@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\CanReset;
+
 
 class User extends Authenticatable
 {
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role',
+        'name', 'email', 'password', 'role', 'username', 'gender',
     ];
 
     /**
@@ -61,6 +63,14 @@ class User extends Authenticatable
      public function courses()
     {
         return $this->hasMany('App\Courses');
+    }
+
+
+
+  // User relationship to the pictures Model
+     public function pictures()
+    {
+        return $this->hasOne('App\Pictures');
     }
 
 }

@@ -40,19 +40,26 @@ Route::get('/school/teacher', 'SchoolController@teacher')->middleware('auth');
 
 
 
+// routes for uploading results dashboard
+Route::get('/school/exams/upload', 'ExamsController@upload')->middleware('teacher');
+
 
 // routes for Exams dashboard
-Route::get('/school/exams', 'ExamsController@index')->middleware('auth');
+Route::get('/school/exams', 'ExamsController@index')->middleware('student');
 
 
 
 // routes for Fees dashboard
-Route::get('/school/fees', 'FeesController@index')->middleware('auth');
+Route::get('/school/fees', 'FeesController@index')->middleware('student');
 
 
 
 // routes for Courses dashboard
 Route::get('/school/courses', 'CourseController@index')->middleware('auth');
+
+
+
+
 
 
 
