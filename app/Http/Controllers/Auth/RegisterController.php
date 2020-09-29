@@ -35,21 +35,22 @@ class RegisterController extends Controller
    // protected $redirectTo = RouteServiceProvider::REG;
 
 
-// redirect user to a success page after registering
+/** redirect user to a success page after registering
+    protected $redirectTo = '/school/success';
 
-/**public function register(Request $request)
+public function register(Request $request)
     {
         $this->validator($request->all())->validate();
+    event(new Registered($user = $this->create($request->all())));
 
-        event(new Registered($user = $this->create($request->all())));
+    // $this->guard()->login($user);
+    return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
+    }
+**/
 
-        return $this->registered($request, $user)
-            ?: redirect($this->redirectPath('/school/success'));
-    }**/
 
-
-
-// redirect new user
+ //redirect new user
 public function redirectTo(){
         
     if (auth()->user()->role == 'student') {

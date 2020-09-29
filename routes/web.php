@@ -27,7 +27,7 @@ Route::get('/school', 'SchoolController@index');
 
 
 // route for the success dashboard
-Route::get('/school/success', 'RegisterController@register')->middleware('auth');
+Route::get('/school/success', 'SchoolController@register');
 
 
 // route for the student dashboard

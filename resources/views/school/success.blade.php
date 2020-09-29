@@ -5,6 +5,6 @@
 </head>
 <body>
 
-	<p> Account succesfully!! <button> Go to your dashboard</button></p>
+	<p> Account created succesfully!! <button> Go to your dashboard</button></p>
 
 	 @endsection

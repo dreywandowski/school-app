@@ -28,9 +28,9 @@ public function __construct()
 
 
  // function to handle the default dashboard view
-  public function dashboard(){
+  public function register(){
 
-    return view('school.dashboard');
+    return view('school.success');
 }
 
 
