@@ -1,68 +1,48 @@
-
-
-@extends('layouts.app')
+@extends('layout.dashboard')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Student Dashboard') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-                    <!--{{ __('You are logged in!') }}-->
+
+     <title>Student Dashboard</title>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="headerContent">
+            <header>
+                <h2 class="top">My Portal</h2>
+            </header>
+        </div>
+
+        <div class="left-nav">
+            <div class="user-summary">
+                <div class="profile-picture">
+                    <img src="/img/male-profile-picture.jpg">
+                </div>
+                <div class="userName">
+                    <p class="mainUserName">Captain Rogers</p>
+                    <p class="userFooter">Student ID: #1234FY82K2</p>
+                    <p class="update"><a href="#">Update Profile
+                        <i class="fas fa-user-edit"></i>
+                    </a></p>
                 </div>
             </div>
+            <hr>
+            <div class="quickLinks">
+                <a href="#">Pay Fees</a>
+                <a href="#">Payment Status</a>
+                <a href="#">Payment History</a>
+                <a href="#">Manage Courses</a>
+                <a href="#">Download Courses</a>
+                <a href="#">Exam Portal</a>
+                <a href="#">Exam Schedule</a>
+                <a href="#">Exam Results</a>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+            </div>
         </div>
-    </div>
-</div>
-
-
-
 
     
-
-        <center><p> Hey <?php //echo "$first_name" ." ". "$last_name"?>, welcome!!<br><br>
-         This is your dashboard. Pls avail yourself as
-        you please. 
-    </p><br></center>
-       
-
-@content
-    
-
-<div id="result"></div>
-    
-
-<button id="picChange" class="green button"> Update picture</button>
-
-
-
-<div  id="nav">
-    <div id="nav_wrapper">
-    <ul>
-        <li><button id="prompt">Update your profile</button></li><br>
-        <li><a href="/school/courses"> Download Courses</a></li><br>
-        <li><a href="/school/fees"> Pay School Fees</a></li><br>
-        <li><a href="view_bills.php"> Payment History</a></li><br>
-        <li><a href="/school/exams" target="_blank"> Exam Portal</a></li><br>
-        <li><a href="exams.php">Examination Results</a></li><br>
-        <li><a href="../forgot_pwd.php"> Reset Password </a></li><br>
-</ul>
-    </ol>
-</div>
-
-</div>
-
-
-
-</body>
 
 
 @endsection
