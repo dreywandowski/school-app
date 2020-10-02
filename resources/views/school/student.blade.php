@@ -11,6 +11,7 @@
         <div class="headerContent">
             <header>
                 <h2 class="top">My Portal</h2>
+                <a href="javascript:void(0);" class="menu-icon" onclick="menuFunction()"><i class="fas fa-bars"></i></a>
             </header>
         </div>
 

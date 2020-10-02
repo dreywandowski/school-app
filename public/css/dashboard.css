@@ -42,13 +42,21 @@ a {
     background-color: rgb(247, 240, 240);
 }
 
+.menu-icon {
+    display: none;
+}
+
+.profile-picture-1 {
+    display: none;
+}
+
 .left-nav a {
     text-decoration: none;
     color: inherit;
 }
 
 .left-nav .user-summary, .left-nav .quickLinks a {
-    padding: 5% 7%;
+    padding: 5% 5%;
 }
 
 .left-nav .quickLinks a:hover {
@@ -84,8 +92,8 @@ a {
 }
 
 .quickLinks {
-    z-index: 1;
     overflow-x: hidden;
+    /* z-index: 1; */
 }
 
 .quickLinks a {
@@ -107,7 +115,8 @@ a {
 
 .midContent {
     grid-column: 3 / -1;
-    line-height: 2rem;
+    line-height: 3rem;
+    text-align: justify;
     padding: 5%;
 }
 
@@ -121,9 +130,6 @@ div.pay {
 div.pay form {
     width: 50%;
     margin-top: -20%;
-}
-
-form.payment {
 }
 
 div.payment-form {
@@ -176,7 +182,7 @@ p.form-footer {
     border-top: solid 1px black;
 }
 
-@media only screen and (min-width: 450px) and (max-width: 800px) {
+@media only screen and (min-width: 500px) and (max-width: 800px) {
     .left-nav {
         grid-column: 1 / span 3;
         background-color: rgb(247, 240, 240);
@@ -203,11 +209,86 @@ p.form-footer {
     }
 }
 
-@media only screen and (max-width: 449px) {
+@media only screen and (max-width: 499px) {
+    .mainContainer {
+        width: 98%;
+        margin: 2% 1%;
+        display: inline-block;
+        border-radius: 0 0 0 0;
+        background: rgba(254,245,245,0.8);;
+    }
 
+    .headerContent {
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 3rem;
+        border-radius: 0 0 0 0;
+        background: none;
+        border-bottom: solid 1px deepskyblue;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .headerContent h2 {
+        display: none;
+    }
+
+    .profile-picture-1 {
+        height: 100%;
+        cursor: pointer;
+    }
+
+    .profile-picture-1 img {
+        height: 100%;
+        width: auto;
+        border-radius: 50%;
+    }
+
+    .profile-picture-1, .menu-icon {
+        display: block;
+        font-size: 2rem;
+    }
+
+    .left-nav {
+        display: none;
+    }
+
+    .quickLinks {
+        background: rgb(206, 204, 204);
+        margin-bottom: -5%;
+        height: 40vh;
+        width: auto;
+    }
+
+    .quickLinks a:nth-child(1) {
+        margin: 0 0 -5% 0;
+    }
+
+    .quickLinks a {
+        margin: -5% 0;
+    }
+
+    i {
+        color: black;
+    }
+
+    .user-summary {
+        display: none;
+    }
+
+    .midContent {
+        display: block;
+    }
+
+    .pay {
+        margin-top: 35%;
+        margin-bottom: 20%;
+    }
+
+    div.pay form {
+        width: 75%;
+    }
 }
-
-
-
-
-
