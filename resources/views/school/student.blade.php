@@ -30,7 +30,7 @@
             </div>
             <hr>
             <div class="quickLinks">
-                <a href="#">Pay Fees</a>
+                <a href="/school/fees">Pay Fees</a>
                 <a href="#">Payment Status</a>
                 <a href="#">Payment History</a>
                 <a href="#">Manage Courses</a>

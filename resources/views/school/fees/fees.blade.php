@@ -76,9 +76,9 @@ cursor: default;
 
 
     <button type="button" id="pay">Pay Now</button><br><br>
-    <a href="student.php">Back</a>&nbsp
+    <a href="/school/student">Back</a>&nbsp
 
-<script type="text/javascript" src="jquery-3.2.1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
 <script type="text/javascript">
 
@@ -130,7 +130,16 @@ var ref = getRandomString(13);
                 console.log("Input amount " + amount +  "Proccessed amount" + amtt + txref);
                alert("Thanks for your payment. Check your email for confirmation");
 
-				$.post("handle_bills.php", {
+
+ $.ajaxSetup({
+              
+    data: {
+        _token: $('meta[name="csrf-token"]').attr('content')
+    }
+              });
+
+/**
+				$.post("/school/fees/handle_bills.php", {
                     
                        email : email,
                        amount : amount,
@@ -139,9 +148,28 @@ var ref = getRandomString(13);
 
 				},  function(data,status){
 					$("#ajax").html(data);
+
                 });
 
                 } 
+**/
+
+                jQuery.ajax({
+                  url: "{{ url('/school/fees/handle_bills') }}",
+                  method: 'post',
+                  data: {
+                      email : email,
+                       amount : amount,
+                       ref : ref,
+                       phone : number
+                  },
+                  success: function(data){
+                     console.log(data);
+                  }
+
+                });
+}
+
                 else {
                     // redirect to a failure page.
                 }
