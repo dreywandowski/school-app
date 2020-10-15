@@ -6,6 +6,7 @@
 <!doctype html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 	<title> Pay Bills </title>
 		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
 
@@ -63,6 +64,7 @@ cursor: default;
 <span id="ajax"></span><br><br>
 
 <form>
+   @csrf
 	<label>Email Address</label><br>
 		<input type="text" name="email" id="email" required><br><br>
 
@@ -154,7 +156,7 @@ var ref = getRandomString(13);
                 } 
 **/
 
-                jQuery.ajax({
+                $.ajax({
                   url: "{{ url('/school/fees/handle_bills') }}",
                   method: 'post',
                   data: {
@@ -164,7 +166,8 @@ var ref = getRandomString(13);
                        phone : number
                   },
                   success: function(data){
-                     console.log(data);
+                    $("#ajax").html(data);
+                     //console.log("Hellloooo" + data);
                   }
 
                 });

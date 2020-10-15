@@ -9,8 +9,9 @@
         <div class="container-ii">
         <header>
             <div class="logo">
-                <a href="/school/"><h2>DREY COLLEGE</h2></a>
-                <a href="/school/"><img src="/img/drey42.jpg" alt=""></a>
+                <a href="/school/"><h2>Home</h2></a>
+              <!--  <a href="/school/"><img src="/img/drey42.jpg" alt=""></a>-->
+              <div class="home"><a href="/school"><i class="fas fa-home" title="Home"></i></a></div>
             </div>
 
             <div class="today"><p>DD/MMM/YYYY<p></div>
