@@ -17,42 +17,41 @@ class FeesController extends Controller
 
 }
 
-     // function to handle the handleing
+
+
+     // function to handle the bills made
   public function handle(){
 
-// retrive the handling page
-    return view('school.fees.handle_bills');
-
-}
-
-
-
-     /** function to handle the bills made
-  public function handle(){
-
- // create a new instance of the fees model
+// create a new instance of the fees model
 
         $fees = new Fees();
 
 // this allows for grabbing the post values and setting to the model
 
-        $fees->name = request('fname');
-        $fees->type = request('name');
-        $fees->type = request('type');
-        $fees->price = request('price');
-        $fees->extras = request('extras');
+        $fees->user = request('user');
+        $fees->email = request('email');
+        $fees->amount = request('amount');
+        $fees->payment_ref = request('payment_ref');
+        
 
 
 // save the data
-        $pizza->save();
+        $fees->save();
 
 // we can use the "with" keyword as a means of storing session variables, which we can access wherever we want. It takes two parameter, the variable, and the message
         
-        return redirect('/pizzas')->with('msg', 'Thanks for your order');
-// retrive the home page
-    return view('school.fees.handle');
+        //return redirect('/school.student')->with('msg', 'Thanks for your order');
 
-}**/
+// retrive the home page
+    return view('/school.student');
+
+
+}
+
+
+
+ 
+
 
 
 }

@@ -65,6 +65,10 @@ cursor: default;
 
 <form>
    @csrf
+
+   <label>Username</label><br>
+    <input type="text" name="user" id="user" required><br><br>
+
 	<label>Email Address</label><br>
 		<input type="text" name="email" id="email" required><br><br>
 
@@ -92,6 +96,7 @@ pay.addEventListener("click", payWithRave, false);
 
 
     function payWithRave() {
+      var user = document.getElementById("user").value;
     	 var email = document.getElementById("email").value;
     var amount = document.getElementById("amount").value;
     var number = document.getElementById("phone").value;
@@ -160,14 +165,15 @@ var ref = getRandomString(13);
                   url: "{{ url('/school/fees/handle_bills') }}",
                   method: 'post',
                   data: {
+                      user : user,
                       email : email,
                        amount : amount,
                        ref : ref,
                        phone : number
                   },
                   success: function(data){
-                    $("#ajax").html(data);
-                     //console.log("Hellloooo" + data);
+                    ////$("#ajax").html(data);
+                     console.log("Hellloooo" + data);
                   }
 
                 });
