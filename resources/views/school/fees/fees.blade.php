@@ -63,7 +63,7 @@ cursor: default;
 
 <span id="ajax"></span><br><br>
 
-<form>
+<form id="lol">
    @csrf
 
    <label>Username</label><br>
@@ -96,6 +96,7 @@ pay.addEventListener("click", payWithRave, false);
 
 
     function payWithRave() {
+
       var user = document.getElementById("user").value;
     	 var email = document.getElementById("email").value;
     var amount = document.getElementById("amount").value;
@@ -140,14 +141,14 @@ var ref = getRandomString(13);
 
  $.ajaxSetup({
               
-    data: {
-        _token: $('meta[name="csrf-token"]').attr('content')
+    headers: {
+        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
     }
               });
 
-/**
-				$.post("/school/fees/handle_bills.php", {
-                    
+
+			/**	$.post("/school/fees/handle_bills.php", {
+                        user : user,
                        email : email,
                        amount : amount,
                        ref : ref,
@@ -158,8 +159,8 @@ var ref = getRandomString(13);
 
                 });
 
-                } 
-**/
+                } **/
+
 
                 $.ajax({
                   url: "{{ url('/school/fees/handle_bills') }}",
@@ -169,11 +170,13 @@ var ref = getRandomString(13);
                       email : email,
                        amount : amount,
                        ref : ref,
-                       phone : number
+                       phone : number,
+                       
                   },
-                  success: function(data){
-                    ////$("#ajax").html(data);
-                     console.log("Hellloooo" + data);
+                  success: function(response){
+                    $("#ajax").html(response);
+                    $("#lol").reset();
+                     
                   }
 
                 });

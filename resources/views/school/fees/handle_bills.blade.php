@@ -6,5 +6,9 @@
 
 
 <body>
-		<p style='color:red'> <u>Hi!! I am the handle bills page !!</u></p><br><br>
+		<p style='color:red'> <u>Payment recorded successfully!!</u></p><br><br>
+
+		 <p> {{session('msg')}}</p>
+
+		 
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+ <p> {{session('msg')}}</p>
 
      <title>Student Dashboard</title>
 </head>
