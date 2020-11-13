@@ -23,11 +23,19 @@
                 <div class="userName">
                     <p class="mainUserName">Captain Rogers</p>
                     <p class="userFooter">Student ID: #1234FY82K2</p>
-                    <p class="update"><a href="#">Update Profile
+                    <p class="update" id="pic"><a href="#"> Change Profile Picture
                         <i class="fas fa-user-edit"></i>
                     </a></p>
                 </div>
             </div>
+
+            <form id="picForm" style="display: none;" action="/school/pic" method="POST" enctype="multipart/form-data">
+                 @csrf
+        <input type="file" id="actual_img" name="image">
+        <!--<input type="text" id="text" name="text">-->
+        <input type="submit" id="picture" value="Upload File">
+    </form>
+
             <hr>
             <div class="quickLinks">
                 <a href="/school/fees">Pay Fees</a>
@@ -44,6 +52,10 @@
         </div>
 
     
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="/js/picture.js"></script>
 
 
 @endsection

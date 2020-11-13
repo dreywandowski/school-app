@@ -39,24 +39,21 @@ public function pricetableItemCreate(Request $request)
 **/
 
      // function to handle the bills made
-  public function handle(Request $request){
+  public function handle(){
 
 // create a new instance of the fees model
  $fees = new Fees();
 
- $input = $request->all();
 
+error_log(request('email'));
+
+return redirect('school.fees.fees');
 // this allows for grabbing the post values and setting to the model
 
-       $fees->user = $input['user'];
-        $fees->email = $input['email'];
-        $fees->amount = $input['amount'];
-        $fees->payment_ref = $input['payment_ref'];
-        
-
+  
 
 // save the data
-        $fees->save();
+        //$fees->save();
 
 // we can use the "with" keyword as a means of storing session variables, which we can access wherever we want. It takes two parameter, the variable, and the message
         
@@ -64,7 +61,7 @@ public function pricetableItemCreate(Request $request)
 
 // retrive the home page
 
-        return response()->json($fees, 201);
+        //return response()->json($fees, 201);
 
         
     //return view('school.fees.handle_bills')->with('msg', 'Payment recorded successfully!!');

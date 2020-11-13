@@ -163,7 +163,7 @@ var ref = getRandomString(13);
 
 
                 $.ajax({
-                  url: "{{ url('/school/fees/handle_bills') }}",
+                  url: "{{ url('/school/fees') }}",
                   method: 'post',
                   data: {
                       user : user,
