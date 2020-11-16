@@ -66,6 +66,11 @@ Route::get('/school/courses', 'CourseController@index')->middleware('auth');
 // routes for changing pictures
 Route::post('/school/pic', 'PicController@index')->middleware('auth');
 
+// route to display pictures
+Route::get('/school/student', 'PicController@showPic')->middleware('auth');
+
+
+
 
 
 

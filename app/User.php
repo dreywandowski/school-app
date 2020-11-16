@@ -40,6 +40,8 @@ class User extends Authenticatable
     ];
 
 
+//protected $primaryKey = 'username';
+
 
     /** Relationships **/
 

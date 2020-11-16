@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Session;
+use App\Pictures;
 
 
 class SchoolController extends Controller
@@ -22,7 +24,12 @@ public function __construct()
 
 // retrive the home page
     return view('school.index');
+
+
 }
+
+
+ 
 
 
 
@@ -50,4 +57,9 @@ public function __construct()
 // retrive the home page
     return view('school.teacher');
 }
+
+
+
+
+
 }

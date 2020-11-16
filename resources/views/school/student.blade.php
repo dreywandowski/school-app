@@ -18,8 +18,10 @@
         <div class="left-nav">
             <div class="user-summary">
                 <div class="profile-picture">
-                    <img src="/img/male-profile-picture.jpg">
-                </div>
+                    <!--<img src="/img/male-profile-picture.jpg">-->
+@foreach($file_path as $user_pic) 
+                    <img src= {{$user_pic->file_path}}>
+                </div>@endforeach
                 <div class="userName">
                     <p class="mainUserName">Captain Rogers</p>
                     <p class="userFooter">Student ID: #1234FY82K2</p>

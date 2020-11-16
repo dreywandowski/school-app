@@ -1,12 +1,18 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+//namespace App\Listeners;
 
+//use Illuminate\Auth\Events\Login;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Session;
+
+
+
 
 
 
@@ -27,7 +33,6 @@ class LoginController extends Controller
 
 
 
-  
 
 
     /**
@@ -54,6 +59,12 @@ class LoginController extends Controller
             break;
     }
 }
+
+
+
+
+
+
 
 
 // to use username as login parameter
@@ -89,3 +100,14 @@ public function username(){
     }
     
 }
+
+/**
+class setUserSession{
+public function handle (Login $event){
+  session(
+['user => $event->user->username']
+  );
+}
+
+}
+**/
