@@ -7,20 +7,7 @@
      <title>Student Dashboard</title>
 </head>
 <body>
-
-
-     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
     <div class="mainContainer">
-
         <div class="headerContent">
             <header>
                 <h2 class="top">My Portal</h2>
@@ -28,13 +15,16 @@
             </header>
         </div>
 
-
         <div class="left-nav">
             <div class="user-summary">
                 <div class="profile-picture">
 
-                    <img src= "{{ Auth::user()->file_path }}" alt="profile pic">
-                </div>
+                    <!--<img src="/img/male-profile-picture.jpg">-->
+                    <!--//@if (is_array($file_path) || is_object ($file_path))-->
+<!--//@foreach($file_path as $user_pic) -->
+                    <!--<img src= {{$user_pic->file_path}} alt="profile pic">--><img src= "{{ Auth::user()->file_path }}" alt="profile pic">
+                </div><!--//@endforeach
+                @//endif-->
                 <div class="userName">
                     <p class="mainUserName">{{ Auth::user()->name }}</p> 
                     <p class="userFooter">Student Username: {{ Auth::user()->username }}</p>
@@ -54,10 +44,11 @@
             <hr>
             <div class="quickLinks">
                 <a href="/school/fees">Pay Fees</a>
+                <a href="#">Payment Status</a>
                 <a href="#">Payment History</a>
                 <a href="#">Manage Courses</a>
                 <a href="#">Download Courses</a>
-                <a href="/school/exams">Exam Portal</a>
+                <a href="#">Exam Portal</a>
                 <a href="#">Exam Schedule</a>
                 <a href="#">Exam Results</a>
                 <p>&nbsp;</p>

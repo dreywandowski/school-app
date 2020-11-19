@@ -24,7 +24,7 @@ class StudentMiddleware
 
                 echo "<script>alert('You do not have authorization to access this page')</script>";
 
-                //return redirect($teacher);
+                return redirect($teacher);
             }
 
 
@@ -32,7 +32,7 @@ class StudentMiddleware
           else if (\Auth::guard($guard)->user()->role != 'student'){
 
         echo "<script>alert('You do not have authorization to access this page')</script>";
-                //return redirect($home); 
+                return redirect($home); 
           }
 
 

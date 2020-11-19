@@ -25,7 +25,7 @@ class TeacherMiddleware
 
                 echo "<script>alert('You do not have authorization to access this page')</script>";
 
-                //return redirect($student);
+                return redirect($student);
             }
 
 
@@ -33,7 +33,7 @@ class TeacherMiddleware
           else if (\Auth::guard($guard)->user()->role != 'teacher'){
 
         echo "<script>alert('You do not have authorization to access this page')</script>";
-                //return redirect($home); 
+                return redirect($home); 
           }
 
 

@@ -93,7 +93,11 @@
                     <div class="input-form" id="consent">
                         <label class="consent"><input type="checkbox" class="remember" required>I accept the terms and conditions of use</label>
                     </div>
+
+                    <input type="text" value="/img/male-profile-picture.jpg" name="file_path" hidden>
                     <p></p>
+
+
                     <button class="login" type="submit">
                     {{ __('Register') }}</button>
                 </form>

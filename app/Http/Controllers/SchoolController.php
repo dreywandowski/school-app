@@ -34,10 +34,28 @@ public function __construct()
 
 
 
- // function to handle the default dashboard view
+ // function to handle the default success view
   public function register(){
 
-    return view('school.success');
+if (Auth::check()){
+
+  if (Auth::user()->role == 'student') {
+       return  redirect('/school/student');
+    }
+    else if (Auth::user()->role == 'teacher'){
+        return  redirect('/school/teacher');
+    }
+    else{
+
+    }
+
+
+}
+
+else{ 
+  return view('school.success');
+}
+   
 }
 
 

@@ -8,6 +8,7 @@ use Illuminate\Auth\Events\Registered;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Pictures;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -35,21 +36,27 @@ class RegisterController extends Controller
    // protected $redirectTo = RouteServiceProvider::REG;
 
 
-/** redirect user to a success page after registering
-    protected $redirectTo = '/school/success';
+//redirect user to a success page after registering
 
 public function register(Request $request)
     {
         $this->validator($request->all())->validate();
     event(new Registered($user = $this->create($request->all())));
 
-    // $this->guard()->login($user);
+$username = $request->get('username');
+
+    //$this->guard()->login($user);
+
+// registered event
+//event(new \App\Events\NewUserRegistered($username));
+
+
     return $this->registered($request, $user)
                         ?: redirect($this->redirectPath());
     }
-**/
+protected $redirectTo = '/school/success';
 
-
+/**
  //redirect new user
 public function redirectTo(){
         
@@ -64,7 +71,7 @@ public function redirectTo(){
         return '/login';
     }
    
-}
+}**/
 
 
     /**
@@ -92,6 +99,7 @@ public function redirectTo(){
             'role' => ['required', 'string', 'min:3'],
             'username' => ['required', 'string', 'min:5', 'unique:users'],
             'gender' => ['required', 'string', 'min:3'],
+            'file_path' => ['string'],
         ]);
     }
 
@@ -110,6 +118,9 @@ public function redirectTo(){
             'role' => $data['role'],
             'username' => $data['username'],
             'gender' => $data['gender'],
-        ]);
+            'file_path' => $data['file_path'],
+        ]); 
     }
+
+
 }

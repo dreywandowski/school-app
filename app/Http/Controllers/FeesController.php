@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Fees;
 use Response;
 use Illuminate\Http\Request;
+use App\Pictures;
 
 class FeesController extends Controller
 {
@@ -72,7 +73,4 @@ return redirect('school.fees.fees');
 
 
  
-
-
-
 }

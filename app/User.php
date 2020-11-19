@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role', 'username', 'gender',
+        'name', 'email', 'password', 'role', 'username', 'gender', 'file_path',
     ];
 
     /**
@@ -69,10 +69,10 @@ class User extends Authenticatable
 
 
 
-  // User relationship to the pictures Model
+  /** User relationship to the pictures Model
      public function pictures()
     {
         return $this->hasOne('App\Pictures');
     }
-
+**/
 }

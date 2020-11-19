@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('role');
             $table->string('username');
             $table->string('gender');
+            $table->string('file_path');
             $table->timestamps();
            // $table->primary('username');
 

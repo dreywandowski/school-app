@@ -41,7 +41,7 @@ Route::get('/school/teacher', 'SchoolController@teacher')->middleware('auth');
 
 
 // routes for uploading results dashboard
-Route::get('/school/exams/upload', 'ExamsController@upload')->middleware('teacher');
+Route::get('/school/exams/upload', 'ExamsController@auth')->middleware('teacher');
 
 
 // routes for Exams dashboard
@@ -51,6 +51,7 @@ Route::get('/school/exams', 'ExamsController@index')->middleware('student');
 
 // routes for Fees dashboard
 Route::get('/school/fees', 'FeesController@index')->middleware('student');
+
 
 
 // routes to handle bills
@@ -66,8 +67,7 @@ Route::get('/school/courses', 'CourseController@index')->middleware('auth');
 // routes for changing pictures
 Route::post('/school/pic', 'PicController@index')->middleware('auth');
 
-// route to display pictures
-Route::get('/school/student', 'PicController@showPic')->middleware('auth');
+
 
 
 
