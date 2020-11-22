@@ -6,9 +6,9 @@
 
 
 <body>
-		<p style='color:red'> <u>Payment recorded successfully!!</u></p><br><br>
+		
 
-		 <p> {{session('msg')}}</p>
+		 <p style='color:red'> {{session('msg')}}</p>
 
 		 
 @endsection

@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use App\Fees;
 use Response;
 use Illuminate\Http\Request;
-use App\Pictures;
+//use App\Pictures;
 
 class FeesController extends Controller
 {
@@ -40,15 +40,20 @@ public function pricetableItemCreate(Request $request)
 **/
 
      // function to handle the bills made
-  public function handle(){
+  public function handle(Request $request){
 
 // create a new instance of the fees model
  $fees = new Fees();
+$input = $request->all();
 
+$fees->user = Auth::user()->username;
+$fees->email = $input['email'];
+$fees->amount = $input['amount'];
+$fees->payment_ref = $input['payment_ref'];
 
-error_log(request('email'));
+$fees->save();
 
-return redirect('school.fees.fees');
+return view('school.fees.handle_bills')->with('msg', 'Payment recorded successfully!!');
 // this allows for grabbing the post values and setting to the model
 
   
@@ -72,5 +77,5 @@ return redirect('school.fees.fees');
 
 
 
- 
+
 }

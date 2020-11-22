@@ -8,9 +8,10 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <link href='css/app.css' rel="stylesheet">
+ <link rel="stylesheet" href="/css/dashboard.css">
+   <!-- <link href='/css/app.css' rel="stylesheet">-->
 
-    <link rel="stylesheet" href="/css/dashboard.css">
+   
     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -46,30 +47,12 @@
 
     @yield('content')
 
- <script>
-        function menuFunction() {
-        var x = document.getElementById("myLinks");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
-        }
-    </script>
+ 
 
-     <div class="midContent">
-            <div>
-                <h4>This is the mid content</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu neque vitae magna malesuada porttitor. Mauris maximus dui et rutrum tristique. Nulla facilisi. Ut lacinia nec elit nec viverra. Sed ut ex fermentum, placerat enim non, venenatis turpis. Nullam lectus odio, euismod a auctor id, malesuada euismod arcu. Duis scelerisque interdum velit rutrum mollis. Nullam risus tortor, maximus maximus odio eu, mattis accumsan risus. Donec rutrum, ex ac porta semper, dui eros pretium leo, nec tempus sem odio id urna. Praesent sollicitudin ligula in ante pretium, eu ornare lacus finibus. Etiam purus erat, ultricies id quam id, lacinia tincidunt nisi.
-                </p>
-            </div>
-        </div>
 
         <div class="footerContent">
-            <p>Copyright &COPY; Dreywandowski College, 2020.</p>
+            <p>Copyright &COPY; <a href="/school">Drey College</a>, 2020.</p>
         </div>
-
     </div>
     
 </body>

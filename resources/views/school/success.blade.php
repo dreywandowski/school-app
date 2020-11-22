@@ -1,13 +1,23 @@
-@extends('layout.application')
 
-@section('content')
-    <title>Registration Success</title>
+
+	 <!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Noto+Sans+KR&family=Rubik&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/regDone.css">
+    <title>Registration Successful</title>
 </head>
 <body>
+    <div class="registration">
+        <div class="reg-note">
+            <p>Registration Successful! <span class="usrName"></span> <br><br>
+                Click <a href="/login">here</a> to login.
+                </p>
 
-	<p> Account created successfully!!<br><br> <a href="/login"> Logon to your dashboard</a></p>
-
-
-<br><br>
+                <br>
 <a href="/school"> Go Home</a>
-	 @endsection
+        </div>
+    </div>
+</body>
+</html>

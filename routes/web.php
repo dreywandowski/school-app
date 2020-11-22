@@ -55,7 +55,7 @@ Route::get('/school/fees', 'FeesController@index')->middleware('student');
 
 
 // routes to handle bills
-Route::post('/school/fees', 'FeesController@handle')->middleware('student');
+Route::post('/school/fees/handle_bills', 'FeesController@handle')->middleware('student');
 
 
 

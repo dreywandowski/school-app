@@ -1,91 +1,114 @@
 
-@extends('layout.application')
-
-@section('content')
 
 <!doctype html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 	<title> Pay Bills </title>
-		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-	
+    <link rel="stylesheet" href="/css/dashboard-payment.css">
+    
+	 <script>
+        function menuFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+        }
+    </script>
 </head>
-<style type="text/css">
-	body{
-		background-image: url(/../school/112185-OOJK89-558.jpg);
-		background-size: cover;
-          font-size: 22px;
-    font-family: 'Zilla Slab', serif;
-	}
-
-a:link, a:visited {
-  background-color: green;
-  color: white;
-  padding: 14px 25px;
-  text-align: center; 
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 8px;
-}
-
-a:hover, a:active {
-  background-color: red;
-}
-input {
-    width: 15%;
-    height: 25px;
-    box-sizing: border-box;
-}
-
-
-
-button{
-background-color: #4CAF50;
-border: none;
-border-radius: 15px;
-color: white;
-padding: 16px 32px;
-text-decoration: none;
-margin: 4px 2px;
-cursor: default;
-}
-
-</style>
-
-
 
 <body>
-    
+
+  <!--<p> <h3 style='color:red'>Make your payments here. Please note that your exams portal will not be accessible if you haven't made a payment.</h3></p>-->
+
+<span id="ajax"></span><br><br>
+
+
+
+ <p> {{session('msg')}}</p>
+
+
+    <div class="mainContainer">
+        <div class="mainContain">
+        <div class="headerContent">
+            <div class="profile-picture-1">
+                <img src="../images/male-profile-picture.jpg">
+            </div>
+            <header>
+                <div class="home"><a href="/school"><i class="fas fa-home" title="Dashboard home"></i></a></div>
+                <div class="h2"><h2 class="top">School Fees Payment</h2></div>
+                <a href="javascript:void(0);" class="menu-icon" onclick="menuFunction()"><i class="fas fa-bars"></i></a>
+                <div class="logout"><a href="/school/student">Student Dashboard</a></div>
+            </header>
+        </div>
+
+        <div class="pay">
+           <form action="" class="payment" id="lol">
+             @csrf
+
+             <label>Username</label><br>
+    <input type="text" name="user" class="inputText" id="user" required><br><br>
+
+  <label>Email Address</label><br>
+    <input type="text" name="email" class="inputText" id="email" required><br><br>
+
+    <label>Amount</label><br>
+    <input type="number" name="amount" class="inputText" id="amount" required><br><br>
+
+    <label>Phone number</label><br>
+    <input type="text" name="phone" class="inputText" id="phone" required><br><br>
+            <button type="button" id="pay">Pay Now</button><br><br>
+    <a href="/school/student">Back</a>&nbsp
+
+           </form>
+           
+        </div>
+
+        <div class="footerContent">
+            <p>Copyright &COPY; Dreywandowski College, 2020.</p>
+        </div>
+    </div>
+    </div>
+
+
+<!--
+
 <p style='color:white'> <u>Make your payments here.<br></u></p>
 <p style='color:red'> <u>Please note that your appointments will not be honoured if you haven't made a payment.</u></p><br><br>
 
 <span id="ajax"></span><br><br>
 
+ <p> {{session('msg')}}</p>
+
 <form id="lol">
    @csrf
 
    <label>Username</label><br>
-    <input type="text" name="user" id="user" required><br><br>
+    <input type="text" name="user" class="inputText" id="user" required><br><br>
 
 	<label>Email Address</label><br>
-		<input type="text" name="email" id="email" required><br><br>
+		<input type="text" name="email" class="inputText" id="email" required><br><br>
 
 		<label>Amount</label><br>
-		<input type="number" name="amount" id="amount" required><br><br>
+		<input type="number" name="amount" class="inputText" id="amount" required><br><br>
 
 		<label>Phone number</label><br>
-		<input type="text" name="phone" id="phone" required><br><br>
+		<input type="text" name="phone" class="inputText" id="phone" required><br><br>
     
 </form>
 
 
     <button type="button" id="pay">Pay Now</button><br><br>
     <a href="/school/student">Back</a>&nbsp
+-->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script type="text/javascript">
 
 
@@ -111,7 +134,7 @@ pay.addEventListener("click", payWithRave, false);
     return result;
 }
 
-var ref = getRandomString(13);
+var payment_ref = getRandomString(13);
 
         var x = getpaidSetup({
             PBFPubKey: API_publicKey,
@@ -132,7 +155,7 @@ var ref = getRandomString(13);
                 var amtt = response.tx.charged_amount;
                 var status = response.tx.status;
                 // collect txRef returned and pass to a                    server page to complete status check.
-                console.log("This is the response returned after a charge", response);
+                console.log("This is the response returned after a charge", response, code);
                 if ((code = "00") && (amtt == amount)){
                    // window.location = "handle_bills.php";
                 console.log("Input amount " + amount +  "Proccessed amount" + amtt + txref);
@@ -142,7 +165,7 @@ var ref = getRandomString(13);
  $.ajaxSetup({
               
     headers: {
-        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
               });
 
@@ -160,23 +183,30 @@ var ref = getRandomString(13);
                 });
 
                 } **/
+//var data = $(this).serialize();
 
+
+      var user = document.getElementById("user").value;
+       var email = document.getElementById("email").value;
+    var amount = document.getElementById("amount").value;
+    var number = document.getElementById("phone").value;
 
                 $.ajax({
-                  url: "{{ url('/school/fees') }}",
+                  url: "{{ url('/school/fees/handle_bills.php') }}",
                   method: 'post',
-                  data: {
+                  data:
+                  {
                       user : user,
                       email : email,
                        amount : amount,
-                       ref : ref,
-                       phone : number,
+                       payment_ref : payment_ref,
+                       //phone : number,
                        
                   },
                   success: function(response){
                     $("#ajax").html(response);
-                    $("#lol").reset();
-                     
+                    //$("#lol").reset();
+                     console.log(data);
                   }
 
                 });
@@ -193,6 +223,6 @@ var ref = getRandomString(13);
 
 </script>
 
-@endsection
+
 	</body>
 	</html>
